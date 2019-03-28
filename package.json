@@ -4,7 +4,9 @@
   "description": "HRR37-Front-end-capstone",
   "main": "test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "build": "webpack -d --watch",
+    "start": "nodemon ./server/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,19 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "jest": "^24.5.0",
+    "jquery": "^3.3.1",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.10",
     "react": "^16.8.5",
     "react-dom": "^16.8.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   }
 }
