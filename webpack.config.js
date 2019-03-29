@@ -3,11 +3,11 @@ const path = require('path');
 
 module.exports = {
   context: __dirname + '/client',
-  entry: './index.js',
+  entry: './index.jsx',
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
@@ -18,6 +18,6 @@ module.exports = {
   },
   output: {
     path: __dirname + '/public',
-    filename: 'app.js',
+    filename: 'bundle.js',
   }
 };
