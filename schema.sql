@@ -1,13 +1,13 @@
-DROP DATABASE IF EXISTS Deepfryd;
+DROP DATABASE IF EXISTS deepfryd;
 
-CREATE DATABASE Deepfryd;
+CREATE DATABASE deepfryd;
 
-USE Deepfryd;
+USE deepfryd;
 
-CREATE TABLE reviews
-(
-  id int NOT NULL AUTO-INCREMENT,
+CREATE TABLE reviews (
+  id int NOT NULL AUTO_INCREMENT,
   review varchar(100) NOT NULL,
   rating int NOT NULL,
-  productId int
+  product_id int NOT NULL,
+  PRIMARY KEY (ID)
 );
