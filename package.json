@@ -5,6 +5,7 @@
   "main": "test.js",
   "scripts": {
     "test": "jest",
+    "seed": "mysql -u root < schema.sql",
     "build": "webpack -d --watch",
     "start": "nodemon ./server/index.js"
   },
