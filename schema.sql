@@ -8,6 +8,6 @@ CREATE TABLE reviews
 (
   id int NOT NULL AUTO-INCREMENT,
   review varchar(100) NOT NULL,
-  rating Number NOT NULL,
-  productId Number
+  rating int NOT NULL,
+  productId int
 );
