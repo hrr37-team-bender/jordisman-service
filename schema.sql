@@ -6,8 +6,9 @@ USE deepfryd;
 
 CREATE TABLE reviews (
   id int NOT NULL AUTO_INCREMENT,
-  review varchar(100) NOT NULL,
+  review varchar(1000) NOT NULL,
   rating int NOT NULL,
+  created_at date,
   product_id int NOT NULL,
   PRIMARY KEY (ID)
 );
