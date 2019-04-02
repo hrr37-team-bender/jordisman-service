@@ -12,7 +12,7 @@ connection.connect(err => {
 });
 
 const getAllData = function(callback) {
-  let queryStr = 'select * from reviews';
+  let queryStr = 'select * from reviews limit 6';
   connection.query(queryStr, (err, results) => {
     if (err) {
       console.log('getAllData failed:', err);

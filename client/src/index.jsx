@@ -1,19 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
+import axios from 'axios';
+import moment from 'moment';
+// import StarRatings from './react-star-ratings';
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      arr: []
+      reviews: []
     }
   }
+
+componentDidMount() {
+  axios.get('http://localhost:3003/api/reviews')
+  .then(res => {
+    this.setState({reviews: res.data});
+    console.log('get.data:', data);
+  })
+  .catch(err => {
+    console.log('failed to get data', err);
+  });
+}
 
   render() {
     return (
       <div>
-        <h1>Hello world</h1>
+
+        {this.state.reviews.map(item =>
+            <div>
+
+              <span>{moment(item.created_at).fromNow()}</span>
+              <p>{item.review}</p>
+            </div>
+        )}
       </div>
     )
   }

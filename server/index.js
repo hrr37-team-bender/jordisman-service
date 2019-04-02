@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 app.get('/api/reviews', (req, res) => {
   db.getAllData(results => {
-    console.log('results:', results);
+    console.log('results[0]:', results[0]);
     res.send(results);
   });
 });
