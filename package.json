@@ -4,12 +4,24 @@
   "description": "> Project description",
   "main": ".eslintrc.js",
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native|my-project|react-native-button)/)"
+    ],
+    "setupFiles": [
+      "./client/src/setupTests.js"
     ]
   },
   "scripts": {
-    "test": "jest --watchAll",
+    "test": "jest --verbose",
     "build": "webpack -d --watch",
     "start": "nodemon server/index.js -w database -w server",
     "seed-db": "mysql -u root < schema.sql && node server/insert_data.js"
@@ -29,14 +41,11 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "faker": "^4.1.0",
     "moment": "^2.24.0",
     "mysql": "^2.16.0",
     "nodemon": "^1.18.10",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-star-ratings": "^2.3.0",
-    "styled-components": "^4.2.0"
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
@@ -50,7 +59,6 @@
     "eslint-config-hackreactor": "github:hackreactor-labs/eslint-config-hackreactor",
     "jest": "^24.6.0",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-cli": "^3.3.0"
   }
 }

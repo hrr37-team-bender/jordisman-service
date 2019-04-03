@@ -16,5 +16,5 @@ const insertData = function (data) {
     });
   });
 }
-// console.log(mockData.mockData);
+
 insertData(mockData.mockData);

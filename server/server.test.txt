@@ -7,7 +7,7 @@ describe('index', () => {
 
   beforeAll(() => {
     return axios
-      .get(`http://localhost:${port}/api/reviews`)
+      .get(`http://localhost:${port}/api/reviews/:productId`)
       .then(res => {
         response = res;
       })
