@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 
 componentDidMount() {
-  axios.get('http://localhost:3003/api/reviews')
+  axios.get(`/api/reviews/81420`)
   .then(res => {
     this.setState({reviews: res.data});
     console.log('get.data:', data);

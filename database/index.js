@@ -11,15 +11,17 @@ connection.connect(err => {
   }
 });
 
-const getAllData = function(callback) {
-  let queryStr = 'select * from reviews limit 6';
+const getReviews = function(productId, callback) {
+
+  let queryStr = `select * from reviews where product_id = ${productId}`;
   connection.query(queryStr, (err, results) => {
     if (err) {
-      console.log('getAllData failed:', err);
+      console.log('getReviews failed:', err);
     } else {
+      console.log(results);
       callback(results);
     }
   });
 };
 
-module.exports = {connection, getAllData};
+module.exports = {connection, getReviews};
