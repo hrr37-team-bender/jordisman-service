@@ -4,18 +4,6 @@
   "description": "> Project description",
   "main": ".eslintrc.js",
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "bower_components",
-      "shared"
-    ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!(react-native|my-project|react-native-button)/)"
-    ],
     "setupFiles": [
       "./client/src/setupTests.js"
     ]

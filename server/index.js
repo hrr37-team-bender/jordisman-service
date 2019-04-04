@@ -14,7 +14,7 @@ app.get('/api/reviews/:productId', (req, res) => {
   let productId = req.params.productId;
 
   db.getReviews(productId, results => {
-    console.log('results[0]:', results[0]);
+    // console.log('results[0]:', results[0]);
     res.json(results);
   });
 });
