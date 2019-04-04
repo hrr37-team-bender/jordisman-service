@@ -12,13 +12,12 @@ connection.connect(err => {
 });
 
 const getReviews = function(productId, callback) {
-
   let queryStr = `select * from reviews where product_id = ${productId}`;
   connection.query(queryStr, (err, results) => {
     if (err) {
       console.log('getReviews failed:', err);
     } else {
-      console.log(results);
+      // console.log(results);
       callback(results);
     }
   });
