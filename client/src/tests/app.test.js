@@ -5,8 +5,13 @@ import App from '../App';
 
 describe('App', () => {
   it('should render correctly', () => {
-    const component = shallow(<App />);
+    const wrapper = shallow(<App />);
+    expect(wrapper.exists()).toBe(true);
+  });
 
-    expect(component.exists()).toBe(true);
-  })
+  it('should render one component', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper).toHaveLength(1);
+  });
 })
+

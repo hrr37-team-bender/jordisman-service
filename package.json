@@ -46,6 +46,7 @@
     "enzyme-to-json": "^3.3.5",
     "eslint-config-hackreactor": "github:hackreactor-labs/eslint-config-hackreactor",
     "jest": "^24.6.0",
+    "supertest": "^4.0.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   }
