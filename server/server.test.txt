@@ -7,7 +7,7 @@ describe('index', () => {
 
   beforeAll(() => {
     return axios
-      .get(`http://localhost:${port}/api/reviews/:productId`)
+      .get(`http://localhost:3003/api/reviews/81420`)
       .then(res => {
         response = res;
       })
@@ -18,8 +18,8 @@ describe('index', () => {
     expect(response.status).toBe(200);
   });
 
-  it('should return an array with length of 6', () => {
-    expect(Array.isArray(res.results)).toBe(true);
-    expect(response.results.length).toBe(6);
+  it('should return an array with length of 7', () => {
+    expect(Array.isArray(response.results)).toBe(true);
+    expect(response.results.length).toBe(7);
   });
 });
