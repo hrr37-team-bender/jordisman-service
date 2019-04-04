@@ -8,12 +8,13 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      reviews: []
+      reviews: [],
+      productId: 81420
     }
   }
 
   componentDidMount() {
-    axios.get(`/api/reviews/81420`)
+    axios.get(`/api/reviews/${this.state.productId}`)
       .then(res => {
         this.setState({ reviews: res.data });
         console.log('get.data:', data);
