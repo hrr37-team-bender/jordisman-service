@@ -1,8 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import moment from 'moment';
-// import StarRatings from './react-star-ratings';
+import styled from 'styled-components';
+import StarRating from './StarRating.jsx';
+
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+`;
+
 
 class App extends React.Component {
   constructor(props) {
@@ -26,16 +32,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-
+      <Wrapper>
         {this.state.reviews.map(item =>
           <div>
+            <StarRating rating = {item.rating} />
+            <span>  {moment(item.created_at).fromNow()}</span>
 
-            <span>{moment(item.created_at).fromNow()}</span>
+
             <p>{item.review}</p>
           </div>
         )}
-      </div>
+      </Wrapper>
     )
   }
 }
