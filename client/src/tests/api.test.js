@@ -14,6 +14,6 @@ const options = {
 test('retrieve all reviews for a particular product by product id', () => {
   return axios.get('http://localhost:3003/api/reviews/81420')
   .then(response => {
-    expect(response.data.length).toBe(7);
+    expect(response.data.length).toBe(8);
   });
 })
