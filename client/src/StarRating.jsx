@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 
 const Stars = styled.span`
-  font-size: 1.55em;
+  font-size: 1.1em;
 `;
 
 const RedStar = styled.span`
@@ -64,7 +64,7 @@ class StarRating extends React.Component {
           <GreyStar>&#9733;</GreyStar>
         </Stars>
       )
-    } else if (this.state.rating === 1) {
+    } else {
       return (
         <Stars>
           <RedStar>&#9733;</RedStar>
@@ -74,20 +74,8 @@ class StarRating extends React.Component {
           <GreyStar>&#9733;</GreyStar>
         </Stars>
       )
-    } else {
-      return (
-        <Stars>
-          <GreyStar>&#9733;</GreyStar>
-          <GreyStar>&#9733;</GreyStar>
-          <GreyStar>&#9733;</GreyStar>
-          <GreyStar>&#9733;</GreyStar>
-          <GreyStar>&#9733;</GreyStar>
-        </Stars>
-      )
     }
   }
-
 }
 
 export default StarRating;
-export {RedStar}

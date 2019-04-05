@@ -5,8 +5,13 @@ import styled from 'styled-components';
 import StarRating from './StarRating.jsx';
 
 const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
+  padding: 14em;
+  font-family: Helvetica, Arial, sans-serif;
+`;
+
+const User = styled.span`
+  font-weight: bold;
+  margin-right: 15px;
 `;
 
 
@@ -36,7 +41,9 @@ class App extends React.Component {
         {this.state.reviews.map(item =>
           <div>
             <StarRating rating = {item.rating} />
-            <span>  {moment(item.created_at).fromNow()}</span>
+            <div><User>{item.username}</User>
+              <span>{moment(item.created_at).fromNow()}</span>
+            </div>
 
 
             <p>{item.review}</p>
@@ -48,3 +55,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+
