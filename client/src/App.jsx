@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import StarRating from './StarRating.jsx';
 
 const Wrapper = styled.section`
-  padding: 14em;
-  font-family: Helvetica, Arial, sans-serif;
+  padding: 10px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 `;
 
 const User = styled.span`
@@ -17,7 +17,6 @@ const User = styled.span`
 const Starbreak = styled.div`
   margin-bottom: 7px;
 `;
-
 
 class App extends React.Component {
   constructor(props) {
