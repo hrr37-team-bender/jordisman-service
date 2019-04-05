@@ -14,6 +14,10 @@ const User = styled.span`
   margin-right: 15px;
 `;
 
+const Starbreak = styled.div`
+  margin-bottom: 7px;
+`;
+
 
 class App extends React.Component {
   constructor(props) {
@@ -40,11 +44,10 @@ class App extends React.Component {
       <Wrapper>
         {this.state.reviews.map(item =>
           <div>
-            <StarRating rating = {item.rating} />
+            <Starbreak><StarRating rating={item.rating} /></Starbreak>
             <div><User>{item.username}</User>
               <span>{moment(item.created_at).fromNow()}</span>
             </div>
-
 
             <p>{item.review}</p>
           </div>
