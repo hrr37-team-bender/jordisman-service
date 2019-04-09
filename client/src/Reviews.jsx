@@ -38,6 +38,18 @@ const Button = styled.button`
   margin: 14px 2px;
   cursor: pointer;
 `;
+const Box = styled.div`
+  padding: 4px 15px;
+  Margin: 14px 0px;
+  border: 1px solid #DDDDDD;
+  background-color: #F2F2F2;
+`;
+const Select = styled.select`
+  margin-left: 2px;
+  border: none;
+  font-size: 14px;
+  background-color: #F2F2F2;
+`;
 
 class Reviews extends React.Component {
   constructor(props) {
@@ -45,7 +57,7 @@ class Reviews extends React.Component {
     this.state = {
       reviews: [],
       productId: 81420,
-      showReviews: []
+      showReviews: 3
     }
     this.handleNextBtn = this.handleNextBtn.bind(this);
     this.handleBackBtn = this.handleBackBtn.bind(this);
@@ -55,9 +67,7 @@ class Reviews extends React.Component {
     axios.get(`/api/reviews/${this.state.productId}`)
       .then(res => {
         this.setState(
-          { reviews: res.data,
-            showReviews: res.data.slice(0, 4)
-          });
+          { reviews: res.data });
       })
       .catch(err => {
         console.log('failed to get data', err);
@@ -66,14 +76,14 @@ class Reviews extends React.Component {
 
   handleNextBtn() {
     this.setState({
-      showReviews: this.state.reviews
+      showReviews: this.state.showReviews + 3
     })
   }
 
   handleBackBtn() {
     this.setState({
-      showReviews: this.state.reviews.slice(0, 4)
-    })
+      showReviews: this.state.showReviews - 3
+    });
   }
 
   render() {
@@ -83,13 +93,26 @@ class Reviews extends React.Component {
           <Bold>Overall Customer Rating</Bold>
           <Starbreak>
             <StarRating rating={4} />
-            <Space> 3.9 (97)</Space>
-            <RedText>Write a Review</RedText>
+              <Space> 3.9 ({this.state.reviews.length})</Space>
+              <RedText>Write a Review</RedText>
           </Starbreak>
+
           <Bold>Reviews</Bold>
+
+          <Box>
+            <p>1-{this.state.reviews.slice(0, this.state.showReviews).length} of {this.state.reviews.length} Reviews</p>
+            <p>Sort by:
+            <Select>
+              <option>Most Relevant</option>
+              <option>Most Recent</option>
+              <option>Most Helpful</option>
+              <option>Highest to Lowest Rating</option>
+              <option>Lowest to Highest Rating</option>
+            </Select></p>
+          </Box>
         </div>
         <div>
-          {this.state.showReviews.map(item =>
+          {this.state.reviews.slice(0, this.state.showReviews).map(item =>
             <div key={item.id}>
               <Starbreak><StarRating rating={item.rating} /></Starbreak>
               <User>{item.username}</User>
