@@ -29,12 +29,14 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
+    "css-loader": "^2.1.1",
     "express": "^4.16.4",
     "moment": "^2.24.0",
     "mysql": "^2.16.0",
     "nodemon": "^1.18.10",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "style-loader": "^0.23.1",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
