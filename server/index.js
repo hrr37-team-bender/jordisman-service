@@ -1,7 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const db = require('../database/index.js');
-
+const cors = require('cors');
 const path = require('path');
 const app = express();
 const port = 3003;
@@ -9,6 +9,9 @@ const port = 3003;
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors()); //proxy server get the data.
+
+app.use('/products/:id', express.static(__dirname + '/../client/dist'));
 
 app.get('/api/reviews/:productId', (req, res) => {
   let productId = req.params.productId;
