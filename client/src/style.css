@@ -1,0 +1,85 @@
+.appWrapper {
+  padding: 20px 10px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #F2F2F2;
+  box-shadow: 2px 3px #999;
+  :hover {background-color: white};
+}
+
+.wrapper {
+  padding: 20px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.user {
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.space {
+  margin: 0px 15px;
+}
+
+.redText {
+  color: red;
+  /* :hover {color: black}; */
+  cursor: pointer;
+}
+
+.starbreak {
+  margin-bottom: 10px;
+}
+
+/* .hov:hover{color: black}; */
+
+.bold {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.button {
+  background-color: #EEEEEE;
+  box-shadow: 2px 2px #999;
+  padding: 5px 9px;
+  border-radius: 3px;
+  font-size: 14px;
+  margin: 14px 2px;
+  cursor: pointer;
+}
+
+.buttonHover:hover {
+  background-color: white;
+  color: red;
+};
+
+.box {
+  padding: 4px 15px;
+  Margin: 14px 0px;
+  border: 1px solid #DDDDDD;
+  background-color: #F2F2F2;
+}
+
+.selectCss {
+  margin-left: 2px;
+  border: none;
+  font-size: 14px;
+  background-color: white;
+}
+
+.stars {
+  font-size: 1.1em;
+}
+
+.redStar {
+  letter-spacing: 1px;
+  color: red;
+}
+
+.greyStar {
+  color: grey;
+}
