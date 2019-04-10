@@ -56,7 +56,6 @@ class Reviews extends React.Component {
     super(props)
     this.state = {
       reviews: [],
-      productId: 81420,
       showReviews: 3
     }
     this.handleNextBtn = this.handleNextBtn.bind(this);
@@ -64,7 +63,11 @@ class Reviews extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/reviews/${this.state.productId}`)
+    // console.log('.href:', window.location.href);
+    let urlArr = window.location.href.split('/');
+    let id = urlArr[urlArr.length - 2]; //get the id from url bar
+
+    axios.get(`http://localhost:3003/api/reviews/${id}`)
       .then(res => {
         this.setState(
           { reviews: res.data });
