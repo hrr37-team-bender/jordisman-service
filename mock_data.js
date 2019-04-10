@@ -98,3 +98,5 @@ const mockData = [{ "id": 1, "review": "Nullam molestie nibh in lectus. Pellente
 { "id": 98, "review": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.", "rating": 3, "created_at": "2018-10-09", "product_id": 77457 },
 { "id": 99, "review": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.", "rating": 1, "created_at": "2018-08-07", "product_id": 47049 },
 { "id": 100, "review": "Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.", "rating": 1, "created_at": "2018-06-20", "product_id": 78530 }]
+
+module.exports = { mockData };
