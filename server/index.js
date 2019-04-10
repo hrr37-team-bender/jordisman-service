@@ -15,14 +15,12 @@ app.use('/products/:id', express.static(__dirname + '/../client/dist'));
 
 app.get('/api/reviews/:productId', (req, res) => {
   let productId = req.params.productId;
-
+// console.log('productId', productId);
   db.getReviews(productId, results => {
     // console.log('results[0]:', results[0]);
     res.status(200).json(results);
   });
 });
-
-
 
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
