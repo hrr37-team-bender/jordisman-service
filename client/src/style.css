@@ -1,19 +1,30 @@
 .appWrapper {
+  width: 65%;
+  margin-top: 40px;
   padding: 20px 10px;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 30px;
   border: 1px solid #DDDDDD;
   border-radius: 3px;
   cursor: pointer;
   background-color: #F2F2F2;
   box-shadow: 2px 3px #999;
-  :hover {background-color: white};
 }
 
-.wrapper {
+.appWrapper:hover {background-color: white};
+
+.main {
+  width: 65%;
   padding: 20px;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
+  background-color: yellow;
+}
+
+.typeFace {
+  font-family: Helvetica, Arial, sans-serif;
+  width: 65%;
+  text-align: justify;;
 }
 
 .user {
@@ -31,15 +42,17 @@
   cursor: pointer;
 }
 
+/* .redText:hover{color: black}; */
+
 .starbreak {
   margin-bottom: 10px;
 }
 
-/* .hov:hover{color: black}; */
-
 .bold {
   font-weight: bold;
   font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  margin-top: 30px;
 }
 
 .button {
@@ -62,6 +75,7 @@
   Margin: 14px 0px;
   border: 1px solid #DDDDDD;
   background-color: #F2F2F2;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .selectCss {
@@ -69,6 +83,7 @@
   border: none;
   font-size: 14px;
   background-color: white;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .stars {
