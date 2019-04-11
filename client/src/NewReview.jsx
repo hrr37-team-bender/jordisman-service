@@ -1,5 +1,6 @@
 import React from 'react';
 import StarRating from './StarRating.jsx';
+import styles from './style.css';
 
 const NewReview = (props) => (
   <div>
