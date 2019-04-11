@@ -44,20 +44,20 @@ class Reviews extends React.Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="main">
         <div>
           <p className="bold">Overall Customer Rating</p>
           <div className="starbreak">
             <StarRating rating={4} />
           </div>
             <span className="space"> 3.9 ({this.state.reviews.length})</span>
-            <span className="redText hov">Write a Review</span>
+          <span className="redText typeFace">Write a Review</span>
 
           <p className="bold">Reviews</p>
 
           <div className="box">
-            <p>1-{this.state.reviews.slice(0, this.state.showReviews).length} of {this.state.reviews.length} Reviews</p>
-            <p>Sort by:
+            <p className="typeFace">1-{this.state.reviews.slice(0, this.state.showReviews).length} of {this.state.reviews.length} Reviews</p>
+            <p className="typeFace">Sort by:
             <select className="selectCss">
               <option>Most Relevant</option>
               <option>Most Recent</option>
@@ -69,7 +69,7 @@ class Reviews extends React.Component {
         </div>
         <div>
           {this.state.reviews.slice(0, this.state.showReviews).map(item =>
-            <div key={item.id}>
+            <div key={item.id} className="typeFace">
               <div className="starbreak"><StarRating rating={item.rating} />
               </div>
               <span className="user">{item.username}</span>
