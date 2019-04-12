@@ -1,11 +1,10 @@
 body {
-  margin-left: 20px;
+  margin: 0;
+  padding: 0;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .appWrapper {
-  width: 65%;
-  margin-top: 40px;
   padding: 15px 12px;
   font-size: 26px;
   border: 1px solid #DDDDDD;
@@ -13,22 +12,21 @@ body {
   cursor: pointer;
   background-color: #F2F2F2;
   box-shadow: 2px 2px #E3E3E3;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .appWrapper:hover {background-color: white};
 
 .main {
-  width: 65%;
   padding: 20px;
   font-size: 14px;
-  background-color: yellow;
 }
 
-.typeFace {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  width: 65%;
+.reviewText {
+  width: 98%;
   text-align: justify;
+}
+.reviewLeftMargin {
+  margin-left: 12px;
 }
 
 .user {
@@ -42,25 +40,20 @@ body {
 .marginRight {
   margin-right: 15px;
 }
-
+.marginTop {
+  padding-top: 5px;
+}
+.boldText {
+  font-weight: bold;
+  font-size: 18px;
+}
 .redText {
   color: red;
-  /* :hover {color: black}; */
   cursor: pointer;
 }
 
-/* .redText:hover{color: black}; */
+.redText:hover{color: black};
 
-.starbreak {
-  margin-bottom: 10px;
-}
-
-.bold {
-  font-weight: bold;
-  font-size: 16px;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  margin-top: 30px;
-}
 
 .button {
   background-color: #EEEEEE;
@@ -72,7 +65,7 @@ body {
   cursor: pointer;
 }
 
-.buttonHover:hover {
+.button:hover {
   background-color: white;
   color: red;
 };
@@ -82,10 +75,9 @@ body {
   Margin: 14px 0px;
   border: 1px solid #DDDDDD;
   background-color: #F2F2F2;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-.selectCss {
+.selectC {
   margin-left: 2px;
   border: none;
   font-size: 14px;
@@ -95,6 +87,7 @@ body {
 
 .stars {
   font-size: 1.1em;
+  margin-bottom: 10px;
 }
 
 .redStar {
@@ -103,6 +96,7 @@ body {
 }
 
 .greyStar {
+  letter-spacing: 1px;
   color: grey;
 }
 
@@ -141,9 +135,10 @@ body {
 .msg {
   font-size: 10px;
 }
-.x {
+.floatRight {
   float: right;
 }
 .floatLeft {
   float: left;
+  margin-right: 12px;
 }

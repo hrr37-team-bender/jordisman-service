@@ -16,7 +16,7 @@ class Reviews extends React.Component {
     }
     this.handleNextBtn = this.handleNextBtn.bind(this);
     this.handleBackBtn = this.handleBackBtn.bind(this);
-    this.toggleModal = this.toggleModal.bind(this)
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   componentDidMount() {
@@ -45,13 +45,14 @@ class Reviews extends React.Component {
   }
 
   handleBackBtn() {
-    this.setState({
-      showReviews: this.state.showReviews - 3
-    });
+    if (this.state.showReviews > 3) {
+      this.setState({
+        showReviews: this.state.showReviews - 3
+      });
+    }
   }
 
   toggleModal() {
-    console.log('showPopup:', this.state.showPopup)
     this.setState({
       showPopup: !this.state.showPopup
     })
@@ -59,63 +60,67 @@ class Reviews extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>Ratings and Reviews &#9662;</div>
+      <div className="reviewLeftMargin">
+          <p className="boldText">Overall Customer Rating</p>
+          <div className="floatLeft"><StarRating rating={4} /></div>
 
-        <div>
-
-          <p>Overall Customer Rating</p>
-
-            <StarRating rating={4} className="floatLeft"/>
-              3.9 ({this.state.reviews.length})
-
-              <p className="redText typeFace" onClick={this.toggleModal}>
-                Write a Review
-              </p>
+        <div className="marginTop" onClick={this.toggleModal}>
+                <span>3.9 ({this.state.reviews.length}) </span>
+                <span className="redText space">Write a Review</span>
+              </div>
 
           <Modal
             isOpen={this.state.showPopup}
             onRequestClose={this.toggleModal}
           >
           <button
-            className="x"
+            className="floatRight"
             onClick={this.toggleModal}>X</button><br />
 
             <NewReview/>
 
             </Modal>
 
-          <p className="bold">Reviews</p>
+          <p className="boldText">Reviews</p>
 
-          <div className="box">
-            <p className="typeFace">1-{this.state.reviews.slice(0, this.state.showReviews).length} of {this.state.reviews.length} Reviews</p>
-            <p className="typeFace">Sort by:
-            <select className="selectCss">
+          <div>
+            <p>1-{this.state.reviews.slice(0, this.state.showReviews).length} of {this.state.reviews.length} Reviews</p>
+
+          <div>
+            <span className="marginRight">Sort by: </span>
+            <select className="selectC">
               <option>Most Relevant</option>
               <option>Most Recent</option>
               <option>Most Helpful</option>
               <option>Highest to Lowest Rating</option>
               <option>Lowest to Highest Rating</option>
-            </select></p>
+            </select>
+          </div><br />
+
           </div>
-        </div>
+
+
+
         <div>
           {this.state.reviews.slice(0, this.state.showReviews).map(item =>
-            <div key={item.id} className="typeFace">
-              <div className="starbreak"><StarRating rating={item.rating} />
+            <div key={item.id}>
+              <div>
+                <StarRating rating={item.rating} />
               </div>
               <span className="user">{item.username}</span>
-                <span>{moment(item.created_at).fromNow()}</span>
-              <p>{item.review}</p>
+              <span>{moment(item.created_at).fromNow()}</span>
+              <p className="reviewText">{item.review}</p>
             </div>
           )}
-      </div>
-        <button className="button buttonHover" onClick={this.handleBackBtn}>
+        </div>
+
+        <button className="button" onClick={this.handleBackBtn}>
           &#9664;
         </button>
-        <button className="button buttonHover" onClick={this.handleNextBtn}>
+        <button className="button" onClick={this.handleNextBtn}>
           &#9654;
         </button>
+
       </div>
     )
   }
