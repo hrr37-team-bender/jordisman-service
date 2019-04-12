@@ -104,6 +104,8 @@ class NewReview extends React.Component {
             placeholder="Example: youremail@example.com"
             className="inputField"/><br />
 
+          <div className="marginBottom marginTop">Would you recommend this product to a friend?<span className="yesNo">Yes</span><span className="yesNo">No</span></div>
+
           <button type="submit" value="submit"
             className="postBtn">
             Post Review

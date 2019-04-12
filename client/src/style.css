@@ -58,8 +58,8 @@ body {
 .button {
   background-color: #EEEEEE;
   box-shadow: 2px 2px #999;
-  padding: 5px 9px;
-  border-radius: 3px;
+  padding: 9px 10px;
+  border-radius: 2px;
   font-size: 14px;
   margin: 14px 2px;
   cursor: pointer;
@@ -110,7 +110,7 @@ body {
   margin-bottom: 20px;
 }
 .inputField {
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   margin-top: 10px;
   border: 1px solid #edeaea;
   border-radius: 2px;
@@ -118,7 +118,7 @@ body {
   width: 95%;
 }
 .reviewInput {
-  height: 90px;
+  height: 70px;
   width: 95%;
 }
 .postBtn {
@@ -142,3 +142,16 @@ body {
   float: left;
   margin-right: 12px;
 }
+.yesNo {
+  background-color: #EEEEEE;
+  box-shadow: 1.5px 1.5px #999;
+  padding: 7px 12px;
+  border-radius: 2px;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.yesNo:hover {
+  background-color: white;
+  color: red;
+};
