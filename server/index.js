@@ -22,6 +22,28 @@ app.get('/api/reviews/:productId', (req, res) => {
   });
 });
 
+app.post('/api/reviews/:productId', (req, res) => {
+  let productId = req.params.productId;
+  let inputBody = {
+    username: req.body.username,
+    review: req.body.review,
+    rating: 5,
+    created_at: '2019-4-12',
+    product_id: productId
+    };
+
+  let queryStr = `insert into reviews set ?`;
+
+  db.connection.query(queryStr, inputBody, (err, result) => {
+    if (err) {
+      console.log('post req err:', err);
+    } else {
+      console.log('post req ok:', result);
+      res.status(200).json(result);
+    }
+  });
+});
+
 app.listen(port, () => {
-  console.log(`server running at: http://localhost:${port}`);
+  console.log(`server running at: http:;//localhost:${port}`);
 });

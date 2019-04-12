@@ -1,18 +1,22 @@
 import React from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import Modal from 'react-modal';
 import StarRating from './StarRating.jsx';
 import styles from './style.css';
+import NewReview from './NewReview.jsx'
 
 class Reviews extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       reviews: [],
-      showReviews: 3
+      showReviews: 3,
+      showPopup: false
     }
     this.handleNextBtn = this.handleNextBtn.bind(this);
     this.handleBackBtn = this.handleBackBtn.bind(this);
+    this.toggleModal = this.toggleModal.bind(this)
   }
 
   componentDidMount() {
@@ -30,6 +34,10 @@ class Reviews extends React.Component {
       });
   }
 
+  componentWillMount() {
+    Modal.setAppElement('body');
+  }
+
   handleNextBtn() {
     this.setState({
       showReviews: this.state.showReviews + 3
@@ -42,16 +50,38 @@ class Reviews extends React.Component {
     });
   }
 
+  toggleModal() {
+    console.log('showPopup:', this.state.showPopup)
+    this.setState({
+      showPopup: !this.state.showPopup
+    })
+  }
+
   render() {
     return (
-      <div className="main">
+      <div>
+        <div>Ratings and Reviews &#9662;</div>
+
         <div>
+
           <p className="bold">Overall Customer Rating</p>
-          <div className="starbreak">
+
             <StarRating rating={4} />
-          </div>
-            <span className="space"> 3.9 ({this.state.reviews.length})</span>
-          <span className="redText typeFace">Write a Review</span>
+              3.9 ({this.state.reviews.length})
+
+              <p className="redText typeFace" onClick={this.toggleModal}>
+                Write a Review
+              </p>
+
+          <Modal
+            isOpen={this.state.showPopup}
+            onRequestClose={this.toggleModal}
+          >
+          <button onClick={this.toggleModal}>X</button><br />
+
+            <NewReview/>
+
+            </Modal>
 
           <p className="bold">Reviews</p>
 

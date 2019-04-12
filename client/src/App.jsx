@@ -1,6 +1,7 @@
 import React from 'react';
 import Reviews from './Reviews.jsx';
 import styles from './style.css';
+import Modal from 'react-modal';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class App extends React.Component {
   renderReviews() {
     const {view} = this.state;
     if (view === 'title') {
-      return <div className="appWrapper" onClick={this.handleShowReviews}>Reviews and Ratings &#9662;</div>
+      return <div className="appWrapper" onClick={this.handleShowReviews}>Ratings and Reviews &#9662;</div>
     } else {
       return <Reviews />
     }
