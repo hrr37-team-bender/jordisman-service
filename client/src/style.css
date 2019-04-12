@@ -1,30 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
 .appWrapper {
-  width: 65%;
-  margin-top: 40px;
-  padding: 20px 10px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 30px;
+  padding: 15px 12px;
+  font-size: 26px;
   border: 1px solid #DDDDDD;
   border-radius: 3px;
   cursor: pointer;
   background-color: #F2F2F2;
-  box-shadow: 2px 3px #999;
+  box-shadow: 2px 2px #E3E3E3;
 }
 
 .appWrapper:hover {background-color: white};
 
 .main {
-  width: 65%;
   padding: 20px;
-  font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
-  background-color: yellow;
 }
 
-.typeFace {
-  font-family: Helvetica, Arial, sans-serif;
-  width: 65%;
-  text-align: justify;;
+.reviewText {
+  width: 98%;
+  text-align: justify;
+}
+.reviewLeftMargin {
+  margin-left: 12px;
 }
 
 .user {
@@ -35,37 +37,35 @@
 .space {
   margin: 0px 15px;
 }
-
+.marginRight {
+  margin-right: 15px;
+}
+.marginTop {
+  padding-top: 5px;
+}
+.boldText {
+  font-weight: bold;
+  font-size: 18px;
+}
 .redText {
   color: red;
-  /* :hover {color: black}; */
   cursor: pointer;
 }
 
-/* .redText:hover{color: black}; */
+.redText:hover{color: black};
 
-.starbreak {
-  margin-bottom: 10px;
-}
-
-.bold {
-  font-weight: bold;
-  font-size: 16px;
-  font-family: Helvetica, Arial, sans-serif;
-  margin-top: 30px;
-}
 
 .button {
   background-color: #EEEEEE;
   box-shadow: 2px 2px #999;
-  padding: 5px 9px;
-  border-radius: 3px;
+  padding: 9px 10px;
+  border-radius: 2px;
   font-size: 14px;
   margin: 14px 2px;
   cursor: pointer;
 }
 
-.buttonHover:hover {
+.button:hover {
   background-color: white;
   color: red;
 };
@@ -75,19 +75,19 @@
   Margin: 14px 0px;
   border: 1px solid #DDDDDD;
   background-color: #F2F2F2;
-  font-family: Helvetica, Arial, sans-serif;
 }
 
-.selectCss {
+.selectC {
   margin-left: 2px;
   border: none;
   font-size: 14px;
   background-color: white;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .stars {
   font-size: 1.1em;
+  margin-bottom: 10px;
 }
 
 .redStar {
@@ -96,5 +96,62 @@
 }
 
 .greyStar {
+  letter-spacing: 1px;
   color: grey;
 }
+
+.newReview {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  background-color: #F7F7F7;
+  padding: 30px;
+}
+
+.marginBottom {
+  margin-bottom: 20px;
+}
+.inputField {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border: 1px solid #edeaea;
+  border-radius: 2px;
+  padding: 10px;
+  width: 95%;
+}
+.reviewInput {
+  height: 70px;
+  width: 95%;
+}
+.postBtn {
+  background-color: red;
+  color: white;
+  box-shadow: 1.5px 1.5px #999;
+  padding: 10px 19px;
+  border: 0;
+  border-radius: 3px;
+  font-size: 16px;
+  margin: 14px 2px;
+  cursor: pointer;
+}
+.msg {
+  font-size: 10px;
+}
+.floatRight {
+  float: right;
+}
+.floatLeft {
+  float: left;
+  margin-right: 12px;
+}
+.yesNo {
+  background-color: #EEEEEE;
+  box-shadow: 1.5px 1.5px #999;
+  padding: 7px 12px;
+  border-radius: 2px;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.yesNo:hover {
+  background-color: white;
+  color: red;
+};
