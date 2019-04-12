@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './style.css';
 import Modal from 'react-modal';
+import StarRatings from 'react-star-ratings';
 import axios from 'axios';
 
 class NewReview extends React.Component {
@@ -9,10 +10,19 @@ class NewReview extends React.Component {
     this.state = {
       reviews: [],
       username: '',
-      review: ''
+      review: '',
+      rating: 0
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleRating = this.handleRating.bind(this)
+  }
+
+  handleRating(rating) {
+    console.log('this in rating', this)
+    this.setState({
+      rating: rating
+    });
   }
 
   handleInputChange(e) {
@@ -32,8 +42,9 @@ class NewReview extends React.Component {
     let id = urlArr[urlArr.length - 2]; //get the id from url bar
     let username = this.state.username;
     let review = this.state.review;
+    let rating = this.state.rating;
 
-    axios.post(`http://localhost:3003/api/reviews/${id}`, {username: username, review: review})
+    axios.post(`http://localhost:3003/api/reviews/${id}`, {username: username, review: review, rating: rating})
     .then(res => {
       console.log('post data:', res.data);
       this.setState({reviews: this.state.reviews.push(res.data)})
@@ -47,10 +58,22 @@ class NewReview extends React.Component {
 
         <form onSubmit={this.handleSubmit}>
 
-          <div className="inputField">Rating
-          &#9734;&#9734;&#9734;&#9734;&#9734;
-          </div>
-
+          <div>
+            <span className="marginRight redText">Overall Rating:</span>
+            <StarRatings
+              name="rating"
+              numberOfStars={5}
+              isSelectable={true}
+              starSpacing="5px"
+              starDimension="25px"
+              starHoverColor="orange"
+              starRatedColor="red"
+              rating={this.state.rating}
+              onChange={this.handleRating}
+              changeRating={this.handleRating}
+            />
+            <span className="space">Click to rate!</span>
+          </div><br />
 
           <label>Title:</label><br />
           <input type="text"
@@ -90,6 +113,10 @@ class NewReview extends React.Component {
 
         <p className="msg">You may receive emails regarding this submission. Any emails will include the ability to opt-out of future communications.
         </p>
+        <label className="msg">
+          <input type="checkbox"></input>
+          I agree to the terms & conditions
+        </label>
       </div>
     )
   }

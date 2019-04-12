@@ -1,19 +1,19 @@
 body {
   margin-left: 20px;
-
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .appWrapper {
   width: 65%;
   margin-top: 40px;
   padding: 15px 12px;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 26px;
   border: 1px solid #DDDDDD;
   border-radius: 3px;
   cursor: pointer;
   background-color: #F2F2F2;
   box-shadow: 2px 2px #E3E3E3;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .appWrapper:hover {background-color: white};
@@ -21,7 +21,6 @@ body {
 .main {
   width: 65%;
   padding: 20px;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   background-color: yellow;
 }
@@ -39,6 +38,9 @@ body {
 
 .space {
   margin: 0px 15px;
+}
+.marginRight {
+  margin-right: 15px;
 }
 
 .redText {
@@ -114,7 +116,7 @@ body {
   margin-bottom: 20px;
 }
 .inputField {
-  margin-bottom: 25px;
+  margin-bottom: 22px;
   margin-top: 10px;
   border: 1px solid #edeaea;
   border-radius: 2px;
@@ -137,5 +139,11 @@ body {
   cursor: pointer;
 }
 .msg {
-  font-size: 9px;
+  font-size: 10px;
+}
+.x {
+  float: right;
+}
+.floatLeft {
+  float: left;
 }

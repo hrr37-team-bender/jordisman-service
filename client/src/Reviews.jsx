@@ -20,7 +20,7 @@ class Reviews extends React.Component {
   }
 
   componentDidMount() {
-    // console.log('.href:', window.location.href);
+    console.log('.href:', window.location.href);
     let urlArr = window.location.href.split('/');
     let id = urlArr[urlArr.length - 2]; //get the id from url bar
 
@@ -64,9 +64,9 @@ class Reviews extends React.Component {
 
         <div>
 
-          <p className="bold">Overall Customer Rating</p>
+          <p>Overall Customer Rating</p>
 
-            <StarRating rating={4} />
+            <StarRating rating={4} className="floatLeft"/>
               3.9 ({this.state.reviews.length})
 
               <p className="redText typeFace" onClick={this.toggleModal}>
@@ -77,7 +77,9 @@ class Reviews extends React.Component {
             isOpen={this.state.showPopup}
             onRequestClose={this.toggleModal}
           >
-          <button onClick={this.toggleModal}>X</button><br />
+          <button
+            className="x"
+            onClick={this.toggleModal}>X</button><br />
 
             <NewReview/>
 

@@ -27,7 +27,7 @@ app.post('/api/reviews/:productId', (req, res) => {
   let inputBody = {
     username: req.body.username,
     review: req.body.review,
-    rating: 5,
+    rating: req.body.rating,
     created_at: '2019-4-12',
     product_id: productId
     };
