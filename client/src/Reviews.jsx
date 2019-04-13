@@ -12,11 +12,13 @@ class Reviews extends React.Component {
     this.state = {
       reviews: [],
       showReviews: 3,
-      showPopup: false
+      showPopup: false,
+      showSort: false
     }
     this.handleNextBtn = this.handleNextBtn.bind(this);
     this.handleBackBtn = this.handleBackBtn.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
+    this.toggleSort = this.toggleSort.bind(this);
   }
 
   componentDidMount() {
@@ -58,6 +60,12 @@ class Reviews extends React.Component {
     })
   }
 
+  toggleSort() {
+    this.setState({
+      showSort: !this.state.showSort
+    })
+  }
+
   render() {
     return (
       <div className="reviewLeftMargin">
@@ -75,7 +83,9 @@ class Reviews extends React.Component {
           >
           <button
             className="floatRight"
-            onClick={this.toggleModal}>X</button><br />
+            onClick={this.toggleModal}>
+            X
+          </button><br />
 
             <NewReview/>
 

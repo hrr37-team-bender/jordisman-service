@@ -90,6 +90,7 @@ class NewReview extends React.Component {
 
           <label>Nickname:</label><br />
           <input type="text" name="username"
+            autocomplete="off"
             placeholder="Example: jackie272"
             className="inputField"
             onChange={this.handleInputChange}/><br />
@@ -100,7 +101,8 @@ class NewReview extends React.Component {
             className="inputField"/><br />
 
           <label>Email:</label><br />
-          <input type="text"
+          <input type="email"
+            autocomplete="off"
             placeholder="Example: youremail@example.com"
             className="inputField"/><br />
 
