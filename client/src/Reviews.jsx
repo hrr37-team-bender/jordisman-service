@@ -21,10 +21,10 @@ class Reviews extends React.Component {
 
   componentDidMount() {
     console.log('.href:', window.location.href);
-    let urlArr = window.location.href.split('/');
-    let id = urlArr[urlArr.length - 2]; //get the id from url bar
+    // let urlArr = window.location.href.split('/');
+    // let id = urlArr[urlArr.length - 2]; //get the id from url bar
 
-    axios.get(`http://localhost:3003/api/reviews/${id}`)
+    axios.get(`http://localhost:3003/api/reviews/81420`)
       .then(res => {
         this.setState(
           { reviews: res.data });
