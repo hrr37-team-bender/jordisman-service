@@ -19,7 +19,7 @@ class NewReview extends React.Component {
   }
 
   handleRating(rating) {
-    console.log('this in rating', this)
+    // console.log('this in rating', this)
     this.setState({
       rating: rating
     });
@@ -40,6 +40,7 @@ class NewReview extends React.Component {
     console.log('.href:', window.location.href);
     let urlArr = window.location.href.split('/');
     let id = urlArr[urlArr.length - 2]; //get the id from url bar
+    console.log(urlArr, id);
     let username = this.state.username;
     let review = this.state.review;
     let rating = this.state.rating;
@@ -92,37 +93,44 @@ class NewReview extends React.Component {
           <input type="text" name="username"
             placeholder="Example: jackie272"
             className="inputField"
-            onChange={this.handleInputChange}/><br />
+            onChange={this.handleInputChange}
+          /><br />
 
           <label>Location:</label><br />
           <input type="text"
             placeholder="Example: New York, NY"
-            className="inputField"/><br />
+            className="inputField"
+          /><br />
 
           <label>Email:</label><br />
           <input type="text"
             placeholder="Example: youremail@example.com"
-            className="inputField"/><br />
+            className="inputField"
+          /><br />
 
-          <div className="marginBottom marginTop">Would you recommend this product to a friend?<span className="yesNo">Yes</span><span className="yesNo">No</span></div>
+          <div className="marginBottom marginTop">
+            Would you recommend this product to a friend?
+            <span className="yesNo">Yes</span>
+            <span className="yesNo">No</span>
+          </div>
 
-          <button type="submit" value="submit"
-            className="postBtn">
+          <button type="submit" value="submit" className="postBtn">
             Post Review
           </button>
 
         </form>
 
-        <p className="msg">You may receive emails regarding this submission. Any emails will include the ability to opt-out of future communications.
+        <p className="msg">
+          You may receive emails regarding this submission. Any emails will include the ability to opt-out of future communications.
         </p>
+
         <label className="msg">
           <input type="checkbox"></input>
-          I agree to the terms & conditions
+            I agree to the terms & conditions
         </label>
       </div>
     )
   }
-
 }
 
 

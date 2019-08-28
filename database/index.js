@@ -13,6 +13,7 @@ connection.connect(err => {
 
 const getReviews = (productId, callback) => {
   let queryStr = `select * from reviews where product_id = ${productId}`;
+  console.log('productId in db', productId, 'queryStr', queryStr);
   connection.query(queryStr, (err, results) => {
     if (err) {
       console.log('getReviews failed:', err);
@@ -22,6 +23,16 @@ const getReviews = (productId, callback) => {
     }
   });
 };
+
+
+
+
+
+
+
+
+
+
 
 // const postReview = (productId, inputBody, callback) => {
 

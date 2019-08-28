@@ -11,11 +11,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors()); //proxy server get the data.
 
+// render the entire service with all the services
+// localhost:3003/products/81420
 app.use('/products/:id', express.static(__dirname + '/../client/dist'));
 
+// RESTful api endpoint for getting the data
 app.get('/api/reviews/:productId', (req, res) => {
   let productId = req.params.productId;
-// console.log('productId', productId);
+  console.log('productId', productId);
   db.getReviews(productId, results => {
     // console.log('results[0]:', results[0]);
     res.status(200).json(results);
@@ -24,6 +27,7 @@ app.get('/api/reviews/:productId', (req, res) => {
 
 app.post('/api/reviews/:productId', (req, res) => {
   let productId = req.params.productId;
+  console.log('productId', productId);
   let inputBody = {
     username: req.body.username,
     review: req.body.review,

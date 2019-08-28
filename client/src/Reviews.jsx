@@ -21,10 +21,12 @@ class Reviews extends React.Component {
 
   componentDidMount() {
     console.log('.href:', window.location.href);
-    // let urlArr = window.location.href.split('/');
-    // let id = urlArr[urlArr.length - 2]; //get the id from url bar
+    let urlArr = window.location.href.split('/');
+    console.log(urlArr);
 
-    axios.get(`http://localhost:3003/api/reviews/81420`)
+    let id = urlArr[urlArr.length - 2]; //get the id from url bar
+
+    axios.get(`http://localhost:3003/api/reviews/${id}`)
       .then(res => {
         this.setState(
           { reviews: res.data });
@@ -98,8 +100,6 @@ class Reviews extends React.Component {
           </div><br />
 
           </div>
-
-
 
         <div>
           {this.state.reviews.slice(0, this.state.showReviews).map(item =>
